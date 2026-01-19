@@ -1,0 +1,11 @@
+build and test:
+  stage: qa
+  image: "$CI_IMAGE"
+  script:
+   - mkdir BUILD
+   - cd BUILD
+   - cmake ..
+   - make
+   - ctest -V
+  allow_failure: false
+

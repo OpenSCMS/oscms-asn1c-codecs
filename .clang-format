@@ -1,0 +1,20 @@
+﻿---
+BasedOnStyle: Microsoft
+AlignAfterOpenBracket: AlwaysBreak 
+AlignConsecutiveMacros: 'true'
+AlignConsecutiveAssignments: 'true'
+AlignEscapedNewlines: Right
+BinPackArguments: 'false'
+BinPackParameters: 'false'
+BreakBeforeBraces: Allman
+IndentCaseLabels: 'true'
+IndentWidth: '4'
+IndentWrappedFunctionNames: 'true'
+InsertNewlineAtEOF: 'true'
+KeepEmptyLinesAtTheStartOfBlocks: 'false'
+Language: Cpp
+MaxEmptyLinesToKeep: '1'
+ReflowComments: 'true'
+TabWidth: '4'
+
+...

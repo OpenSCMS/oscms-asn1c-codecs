@@ -1,0 +1,6 @@
+[submodule "submodules/asn1c-generated"]
+	path = submodules/asn1c-generated
+	url = ../oscms-asn1c-generated
+[submodule "submodules/api"]
+	path = submodules/api
+	url = ../oscms-codecs-api
