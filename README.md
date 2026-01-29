@@ -154,13 +154,13 @@ ctest -T memcheck
 
 By default the following `valgrind` options will be specified (in addition to those injected by `CMake` itself)
 
-`-tool=memcheck --leak-check=full --num-callers=50 --show-reachable=yes`
+`--tool=memcheck --leak-check=full --num-callers=50 --show-reachable=yes`
 
 You can specify additional options when configuring using the `EXTRA_MEMCHECK_OPTIONS` variable. For example, to generate suppressions in the log files and track the origin of allocations
 
 ```bash
 cmake .. \
-      -DEXTRA_MEMCHECK_OPTIONS="--gen suppressions=yes --track-origins=yes"
+      -DEXTRA_MEMCHECK_OPTIONS="--gen-suppressions=yes --track-origins=yes"
 ```
 
 The log files will appear in the `Testing/Temporary` directory with names of the form `MemoryChecker.<#>.log` where `#` is the test number. The complete set of results will be in  a log file with `#` being the total number of tests.
