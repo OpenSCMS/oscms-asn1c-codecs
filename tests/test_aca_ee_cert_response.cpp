@@ -82,8 +82,10 @@ TEST_F(AcaEeCertResponseTest, MissingPrivateKey)
 TEST_F(AcaEeCertResponseTest, PrivateKeyTooLong)
 {
     OscmsOctetBuffer encoded               = {};
+    size_t original_allocation_size        = test_response.private_key_info->length;
     test_response.private_key_info->length = 123;
     EXPECT_EQ(oscms_encode_aca_ee_cert_response(&test_response, &encoded), -1);
+    test_response.private_key_info->length = original_allocation_size;
     oscms_empty_octet_buffer(&encoded);
 }
 
