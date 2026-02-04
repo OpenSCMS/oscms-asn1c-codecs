@@ -244,7 +244,7 @@ static int unsigned_to_internal(
         int rc = asn1c_add_to_sequence(&internal->list, cert);
         if (rc != 0)
         {
-            free(cert);
+            ASN_STRUCT_FREE(asn_DEF_Certificate, cert);
             asn_sequence_empty(&internal->list);
             oscms_log(LOG_ERR, "%s: Failed to add certificate %zu of %zu", __func__, i, cert_count);
             return -1;
@@ -288,6 +288,7 @@ static int signatures_to_internal(
             return -1;
         }
         (void)memcpy(internal->array[i], spdu, sizeof(CtlSignatureSpdu_t));
+        (void)explicit_bzero(spdu, sizeof(*spdu));
         free(spdu);
     }
 

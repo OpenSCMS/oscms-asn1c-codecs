@@ -45,7 +45,10 @@ SO_EXPORT int oscms_certificate_chain_to_internal(const OscmsCertificateChain *c
     }
 
     (void)memcpy(&internal->homeCtl, homeCtl, sizeof(MultiSignedCtlSpdu_t));
-    free(homeCtl); // We;ve copied it, so just release the original
+
+    // We've copied it, so just release the original after zeroing it
+    explicit_bzero(homeCtl, sizeof(MultiSignedCtlSpdu_t));
+    free(homeCtl);
 
     internal->others.list.array = NULL;
     internal->others.list.count = 0;
