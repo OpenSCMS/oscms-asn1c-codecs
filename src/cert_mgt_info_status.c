@@ -131,7 +131,6 @@ static int build_ma_list(const OscmsCertManagementPduArgs *args, SequenceOfMaInf
         if (allocate_asn1c_sequence_of(
                 args->ma_psid_list_counts[i], sizeof(Psid_t), (asn_anonymous_sequence_ *)&ma_info_status->psids) != 0)
         {
-            free(ma_info_status);
             oscms_log(LOG_CRIT, "%s: allocate_asn1c_sequence_of failed", __func__);
             return -1;
         }

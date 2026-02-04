@@ -338,6 +338,7 @@ static int encode_recipient_info(
                         &recipient->value.symmetric.encryption_key, &recipient_internal->choice.symmRecipInfo.encKey) !=
                     0)
                 {
+                    (void)explicit_bzero(recipient_internal, sizeof(*recipient_internal));
                     free(recipient_internal);
                     return -1;
                 }
@@ -363,6 +364,7 @@ static int encode_recipient_info(
         rc = asn1c_add_to_sequence(internal, recipient_internal);
         if (rc != 0)
         {
+            (void)explicit_bzero(recipient_internal, sizeof(*recipient_internal));
             free(recipient_internal);
             oscms_log(LOG_ERR, "%s: Failed to add recipient", __func__);
             return -1;

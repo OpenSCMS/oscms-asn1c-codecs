@@ -107,6 +107,7 @@ SO_EXPORT int oscms_encode_ra_ee_cert_ack(
 
     // we've copied it, so we can release the original. But DON"T call ASN_STRUCT_FREE as the copy
     // has all the included resources.
+    (void)explicit_bzero(ra_ee_cert_ack_asn1, sizeof(*ra_ee_cert_ack_asn1));
     free(ra_ee_cert_ack_asn1);
 
     // Wrap up EeRaInterfacePdu into ScmsPdu

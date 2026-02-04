@@ -99,6 +99,7 @@ SO_EXPORT int oscms_encode_composite_crl(const OscmsCompositeCrl *composite_crl,
         return -1;
     }
     (void)memcpy(&pdu.content.choice.cert.choice.compositeCrl.homeCtl, internal_home_ctl, sizeof(MultiSignedCtlSpdu_t));
+    explicit_bzero(internal_home_ctl, sizeof(MultiSignedCtlSpdu_t));
     free(internal_home_ctl);
     internal_home_ctl = 0;
 

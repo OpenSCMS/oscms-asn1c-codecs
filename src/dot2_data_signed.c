@@ -157,6 +157,7 @@ int generate_signed_data(const OscmsDot2DataSignedArgs *args, SignedData_t **sig
     int rc = generate_tbs_data(&args->payload, args->payload_psid, &tbs_data);
     if (rc != 0)
     {
+        (void)explicit_bzero(*signed_data, sizeof(SignedData_t));
         free(*signed_data);
         *signed_data = NULL;
         return -1;
@@ -216,6 +217,7 @@ SO_EXPORT int oscms_encode_dot2_data_signed(const OscmsDot2DataSignedArgs *args,
     int rc = generate_signed_data(args, &signed_data);
     if (rc != 0)
     {
+        (void)explicit_bzero(content, sizeof(*content));
         free(content);
         return -1; // The function takes care of all other resource cleanup and logging
     }
