@@ -64,10 +64,7 @@ static int generate_payload(const OscmsOctetBuffer *tbs_data_payload, SignedData
     if (!content)
     {
         oscms_log(LOG_CRIT, "%s: Failed to allocate memory for Ieee1609Dot2Content_t", __func__);
-        if (unsecured_data)
-        {
-            (void)explicit_bzero(unsecured_data, tbs_data_payload->length);
-        }
+        (void)explicit_bzero(unsecured_data, tbs_data_payload->length);
         free(unsecured_data);
         return -1;
     }
@@ -76,10 +73,7 @@ static int generate_payload(const OscmsOctetBuffer *tbs_data_payload, SignedData
     if (!data)
     {
         oscms_log(LOG_CRIT, "%s: Failed to allocate memory for Ieee1609Dot2Data_t", __func__);
-        if (unsecured_data)
-        {
-            (void)explicit_bzero(unsecured_data, tbs_data_payload->length);
-        }
+        (void)explicit_bzero(unsecured_data, tbs_data_payload->length);
         free(unsecured_data);
         free(content);
         return -1;
@@ -88,10 +82,7 @@ static int generate_payload(const OscmsOctetBuffer *tbs_data_payload, SignedData
     *signed_data_payload = (SignedDataPayload_t *)calloc(1, sizeof(SignedDataPayload_t));
     if (!*signed_data_payload)
     {
-        if (unsecured_data)
-        {
-            (void)explicit_bzero(unsecured_data, tbs_data_payload->length);
-        }
+        (void)explicit_bzero(unsecured_data, tbs_data_payload->length);
         free(unsecured_data);
         free(content);
         free(data);
