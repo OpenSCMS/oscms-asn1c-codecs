@@ -49,7 +49,7 @@ static asn_TYPE_descriptor_t *enclosing_type_to_descriptor[] = {
     &asn_DEF_EeEcaCertRequestSpdu,                       // OSCMS_DOT2_DATA_SIGNED_TYPE_EE_ECA_CERT_REQUEST_SPDU
     &asn_DEF_RaEeCertAckSpdu,                            // OSCMS_DOT2_DATA_SIGNED_TYPE_RA_EE_CERT_ACK_SPDU
     &asn_DEF_RaEeEnrollmentCertAckSpdu,                  // OSCMS_DOT2_DATA_SIGNED_TYPE_RA_EE_ENROLLMENT_CERT_ACK_SPDU
-    &asn_DEF_Ieee1609Dot2Data_SignedEncrypted_358P0, // OSCMS_DOT2_DATA_SIGNED_TYPE_DOT_DATA_SIGNED_ENCRYTPED_SPDU
+    &asn_DEF_Ieee1609Dot2Data_SignedEncrypted_358P0, // OSCMS_DOT2_DATA_SIGNED_TYPE_DOT_DATA_SIGNED_ENCRYPTED_SPDU
     &asn_DEF_AcaRaCertResponseSpdu,                  // OSCMS_DOT2_DATA_SIGNED_TYPE_ACA_RA_CERT_RESPONSE_SPDU
     &asn_DEF_EeRaDownloadRequestSpdu,                // OSCMS_DOT2_DATA_SIGNED_TYPE_RA_EE_DOWNLOAD_REQUEST_SPDU
     &asn_DEF_RaEeCertInfoSpdu                        // OSCMS_DOT2_DATA_SIGNED_TYPE_RA_EE_CERT_INFO_SPDU

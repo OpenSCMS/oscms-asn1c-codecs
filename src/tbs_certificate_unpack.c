@@ -78,7 +78,7 @@ static int unpack_certificate_id(const CertificateId_t *internal, OscmsTbsCertif
             }
             break;
 
-        case OSCMS_CERTIFICATE_ID_TYPE_BIMARY_ID:
+        case OSCMS_CERTIFICATE_ID_TYPE_BINARY_ID:
             if (oscms_octet_buffer_init_from_octet_string(
                     &internal->choice.binaryId, &id->value.binary_id, &tbs_cert->allocations) != 0)
             {

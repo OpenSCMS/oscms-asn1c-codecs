@@ -344,7 +344,7 @@ static int encode_recipient_info(
                 }
                 break;
 
-            case OSCMS_RECIPIENT_INFO_TYPE_CERTIICATE:
+            case OSCMS_RECIPIENT_INFO_TYPE_CERTIFICATE:
             case OSCMS_RECIPIENT_INFO_TYPE_SIGNED:
             case OSCMS_RECIPIENT_INFO_TYPE_REK:
                 if (encode_public_recipient(recipient, &recipient_internal->choice.certRecipInfo) != 0)
