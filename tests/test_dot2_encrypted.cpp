@@ -36,12 +36,12 @@ TEST(Dot2DataEncryptedDecode, BadArgs)
     };
     OscmsDot2DataEncrypted dot2_data_encrypted = {};
 
-    EXPECT_EQ(oscms_decode_dot2_data_encrypted(NULL, OSCMS_DOT2_DATA_ENCRYPTED_TYPE_EE_RA_CERT_REQEUST_SPDU, 0), -1);
+    EXPECT_EQ(oscms_decode_dot2_data_encrypted(NULL, OSCMS_DOT2_DATA_ENCRYPTED_TYPE_EE_RA_CERT_REQUEST_SPDU, 0), -1);
     EXPECT_EQ(
-        oscms_decode_dot2_data_encrypted(&payload, OSCMS_DOT2_DATA_ENCRYPTED_TYPE_EE_RA_CERT_REQEUST_SPDU, 0), -1);
+        oscms_decode_dot2_data_encrypted(&payload, OSCMS_DOT2_DATA_ENCRYPTED_TYPE_EE_RA_CERT_REQUEST_SPDU, 0), -1);
     EXPECT_EQ(
         oscms_decode_dot2_data_encrypted(
-            0, OSCMS_DOT2_DATA_ENCRYPTED_TYPE_EE_RA_CERT_REQEUST_SPDU, &dot2_data_encrypted),
+            0, OSCMS_DOT2_DATA_ENCRYPTED_TYPE_EE_RA_CERT_REQUEST_SPDU, &dot2_data_encrypted),
         -1);
     EXPECT_EQ(oscms_decode_dot2_data_encrypted(&payload, (OscmsDot2DataEncryptedType)1024, &dot2_data_encrypted), -1);
 }
@@ -57,7 +57,7 @@ TEST(Dot2DataEncryptedDecode, InvalidData)
     OscmsDot2DataEncrypted dot2_data_encrypted = {};
     EXPECT_EQ(
         oscms_decode_dot2_data_encrypted(
-            payload, OSCMS_DOT2_DATA_ENCRYPTED_TYPE_EE_RA_CERT_REQEUST_SPDU, &dot2_data_encrypted),
+            payload, OSCMS_DOT2_DATA_ENCRYPTED_TYPE_EE_RA_CERT_REQUEST_SPDU, &dot2_data_encrypted),
         -1);
     oscms_empty_dot2_data_encrypted(&dot2_data_encrypted);
 }
@@ -73,7 +73,7 @@ TEST(Dot2DataEncryptedDecode, Success)
     OscmsDot2DataEncrypted dot2_data_encrypted = {};
     EXPECT_EQ(
         oscms_decode_dot2_data_encrypted(
-            payload, OSCMS_DOT2_DATA_ENCRYPTED_TYPE_EE_RA_CERT_REQEUST_SPDU, &dot2_data_encrypted),
+            payload, OSCMS_DOT2_DATA_ENCRYPTED_TYPE_EE_RA_CERT_REQUEST_SPDU, &dot2_data_encrypted),
         0);
     oscms_empty_dot2_data_encrypted(&dot2_data_encrypted);
 }
@@ -101,7 +101,7 @@ TEST(Dot2DataEncryptedEncode, Success)
     OscmsDot2DataEncrypted dot2_data_encrypted = {};
     ASSERT_EQ(
         oscms_decode_dot2_data_encrypted(
-            payload, OSCMS_DOT2_DATA_ENCRYPTED_TYPE_EE_RA_CERT_REQEUST_SPDU, &dot2_data_encrypted),
+            payload, OSCMS_DOT2_DATA_ENCRYPTED_TYPE_EE_RA_CERT_REQUEST_SPDU, &dot2_data_encrypted),
         0);
 
     TrackedOctetBuffer encoded = {};

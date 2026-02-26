@@ -87,7 +87,7 @@ static int pack_certificate_id(const OscmsTbsCertificate *tbs_cert, CertificateI
             }
             break;
 
-        case OSCMS_CERTIFICATE_ID_TYPE_BIMARY_ID:
+        case OSCMS_CERTIFICATE_ID_TYPE_BINARY_ID:
             internal->present = CertificateId_PR_binaryId;
             if (oscms_octet_string_init_from_octet_buffer(&tbs_cert->id.value.binary_id, &internal->choice.binaryId) !=
                 0)
