@@ -12,7 +12,7 @@ tool.
 
 * The code is written to the C11 standard
 * POSIX Compliance is preferred when using library functions (e.g use `stat` in preference to `access`)
-* GCC Must be vesion 11 or greater
+* GCC Must be version 11 or greater
 * CMake version 3.31.5 is used, being the version supported by Ubuntu 22.04
 
 ## Header Files
@@ -41,7 +41,7 @@ Groups of `#include` statements should be separated by a blank line.
 
 ### Namespaces
 
-In the sense of the Style Guide, these are a C++ feature and not applicabe to C.
+In the sense of the Style Guide, these are a C++ feature and not applicable to C.
 
 However, related functions should be named consistently. A good convention is to
 use the same initial term for all public identifiers.
@@ -114,7 +114,7 @@ This section largely replaces the Classes section of the style guide.
 When declaring ta struct, the following style is strongly preferred
 
 ``` C
-tyepdef {
+typedef {
     ... // members
 } StructTypeName;
 ```
@@ -161,7 +161,7 @@ struct implementation {
 The best example, from the earliest days of C, is the `FILE` structure
 used in all of the file-i/o standard library functions. If you dig into
 the header files for your compiler, you will never find a `struct`
-body delcaration for `FILE`. Only those functions know what is inside
+body declaration for `FILE`. Only those functions know what is inside
 a `FILE` structure, so it can change between operating systems or
 even compiler versions without breaking any code.
 
