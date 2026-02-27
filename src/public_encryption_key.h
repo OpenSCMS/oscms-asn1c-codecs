@@ -14,8 +14,8 @@
 //
 // SPDX-License-Identifier: Apache-2.0
 
-#ifndef OSCMS_PUBLIC_ENCRYPTON_KEY_H
-#define OSCMS_PUBLIC_ENCRYPTON_KEY_H
+#ifndef OSCMS_PUBLIC_ENCRYPTION_KEY_H
+#define OSCMS_PUBLIC_ENCRYPTION_KEY_H
 
 #ifdef __cplusplus
 extern "C"
@@ -27,11 +27,10 @@ extern "C"
 
 #include "oscms_asn1c_generated/PublicEncryptionKey.h"
 
-    int oscms_public_encryption_key_from_internal(const PublicEncryptionKey_t *internal,
-                                                  OscmsPublicEncryptionKey *pe_key,
-                                                  OscmsSequence *tracker);
+    int oscms_public_encryption_key_from_internal(
+        const PublicEncryptionKey_t *internal, OscmsPublicEncryptionKey *pe_key, OscmsSequence *tracker);
 
 #ifdef __cplusplus
 }
 #endif //__cplusplus
-#endif // OSCMS_PUBLIC_ENCRYPTON_KEY_H
+#endif // OSCMS_PUBLIC_ENCRYPTION_KEY_H

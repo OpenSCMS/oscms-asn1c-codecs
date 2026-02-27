@@ -36,7 +36,7 @@
 
 #include "asn1c_utilities.h"
 
-class MutliSignedCtlTest : public ::testing::Test
+class MultiSignedCtlTest : public ::testing::Test
 {
   protected:
     OscmsOctetBuffer encoded_multi_signed_ctl_spdu = {};
@@ -285,19 +285,19 @@ class MutliSignedCtlTest : public ::testing::Test
     }
 };
 
-TEST_F(MutliSignedCtlTest, DecomposeCompositeCrl)
+TEST_F(MultiSignedCtlTest, DecomposeCompositeCrl)
 {
     DecomposeCompositeCrl();
 }
 
-TEST_F(MutliSignedCtlTest, ReleaseDecomposed)
+TEST_F(MultiSignedCtlTest, ReleaseDecomposed)
 {
     DecomposeCompositeCrl();
     ReleaseDecomposed();
     ReleaseDecomposed();
 }
 
-TEST_F(MutliSignedCtlTest, EncodeSpduSuccess)
+TEST_F(MultiSignedCtlTest, EncodeSpduSuccess)
 {
     TrackedOctetBuffer encoded;
     DecomposeCompositeCrl();

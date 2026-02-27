@@ -108,7 +108,7 @@ static int unpack_verification_key_indicator(const VerificationKeyIndicator_t *i
             break;
         case OSCMS_VERIFICATION_KEY_INDICATOR_TYPE_KEY:
             // All if the elements of the union are either EccP256CurvePoints or EccP384CurvePoints and
-            // these are bascically the same datastructure so we just point to one of them.
+            // these are basically the same data structure so we just point to one of them.
             if (oscms_ecc_curve_point_from_internal(
                     &internal->choice.verificationKey.choice.ecdsaNistP256,
                     (OscmsEccPointCurveType)internal->choice.verificationKey.present,

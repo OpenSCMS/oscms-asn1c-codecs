@@ -56,7 +56,7 @@ SO_EXPORT int oscms_certificate_chain_to_internal(const OscmsCertificateChain *c
 
     if (certificate_chain->others_count > 0 && certificate_chain->others != NULL)
     {
-        // Pre-allocate the iternal sequence array of pointers to avoid regular re-allocs
+        // Pre-allocate the internal sequence array of pointers to avoid regular re-allocs
         internal->others.list.array = calloc(certificate_chain->others_count, sizeof(Certificate_t *));
         if (!internal->others.list.array)
         {

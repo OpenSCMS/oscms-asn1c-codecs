@@ -54,7 +54,7 @@ class CertificateChainTest : public ::testing::Test
         ASSERT_EQ(decode_and_check(&known_encoded_spdu, &asn_DEF_CertificateChainSpdu, (void **)&outer_spdu), 0);
         ASSERT_NE(outer_spdu, nullptr);
 
-        // Decode the unsecued payload as an SCMS PDU
+        // Decode the unsecured payload as an SCMS PDU
         OscmsOctetBuffer raw_scmspdu = {
             .length = outer_spdu->content->choice.unsecuredData.size,
             .data   = outer_spdu->content->choice.unsecuredData.buf};
@@ -67,7 +67,7 @@ class CertificateChainTest : public ::testing::Test
         CertificateChain_t *internal = &inner_scms_pdu->content.choice.cert.choice.certificateChain;
         memset(&known_certificate_chain, 0, sizeof(known_certificate_chain));
 
-        // Re-encode the partially decoeded MultiSignedCtlSpdu
+        // Re-encode the partially decoded MultiSignedCtlSpdu
         ASSERT_EQ(
             0, check_and_encode(&internal->homeCtl, &asn_DEF_MultiSignedCtlSpdu, &known_certificate_chain.home_ctl));
 

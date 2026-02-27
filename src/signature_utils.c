@@ -48,7 +48,7 @@ int oscms_signature_to_internal(const OscmsSignature *api_signature, void *inter
         }
         else
         {
-            // We rely on the fact that all the in-memory reprsentations are the same and just treat them all as a NIST
+            // We rely on the fact that all the in-memory representations are the same and just treat them all as a NIST
             // P256
             rc = oscms_internal_from_ecc_curve_point(
                 &api_signature->rsig.curve_point, &internal_signature->choice.ecdsaNistP256Signature.rSig);
@@ -98,7 +98,7 @@ int oscms_signature_from_internal(
     }
     else
     {
-        // Evertyhing else is a curve point for r_sig
+        // Everything else is a curve point for r_sig
 
         // Annoyingly, the ASN.1 for a Signature has the choices for P834 in a different order than everywhere else,  so
         // we can't just use the internal representation as is.

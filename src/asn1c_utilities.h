@@ -40,9 +40,9 @@ extern "C"
      *
      * @param encoded_data COER encoded data to be decoded
      * @param td ASN.1 type descriptor fpr the tpe definition to control decoding
-     * @param sptr Pointer to a pointer to a compatible iternal structure to hold the output.
+     * @param sptr Pointer to a pointer to a compatible internal structure to hold the output.
      *
-     * The otput structure will be dynamically allocated and must be freed by the caller using the ASN_STRUCT_FREE
+     * The output structure will be dynamically allocated and must be freed by the caller using the ASN_STRUCT_FREE
      * macro.
      *
      * @return 0 on success
@@ -52,7 +52,7 @@ extern "C"
     /**
      * @brief Check the constraints on an internal structure and encode it
      *
-     * @param sptr Pointer to a compatible iternal structure to check and encode
+     * @param sptr Pointer to a compatible internal structure to check and encode
      * @param td ASN.1 type descriptor fpr the tpe definition to control encoding
      * @param encoded Output buffer to hold the encoded data
      *
@@ -72,7 +72,7 @@ extern "C"
      *
      * @param elements Number of elements to be allocated
      * @param element_size Size of each element
-     * @param sptr Pointer to a pointer to a compatible iternal structure to hold the output.
+     * @param sptr Pointer to a pointer to a compatible internal structure to hold the output.
      *
      * @return 0 on success
      */

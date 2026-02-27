@@ -36,19 +36,19 @@ static int check_args(const OscmsCertManagementPduArgs *args)
 {
     if (args->crl_count > 0 && (!args->crl_series_list || !args->crl_issue_dates || !args->crl_craca_ids))
     {
-        oscms_log(LOG_CRIT, "%s: NULL parameter provided for CRL componetns", __func__);
+        oscms_log(LOG_CRIT, "%s: NULL parameter provided for CRL components", __func__);
         return -1;
     }
 
     if (args->ctl_count > 0 && (!args->ctl_series_ids || !args->ctl_sequence_numbers || !args->ctl_last_update_times))
     {
-        oscms_log(LOG_CRIT, "%s: NULL parameter provided for CTL componetns", __func__);
+        oscms_log(LOG_CRIT, "%s: NULL parameter provided for CTL components", __func__);
         return -1;
     }
 
     if (args->ma_count > 0 && (!args->ma_psid_lists || !args->ma_updated_times || !args->ma_psid_list_counts))
     {
-        oscms_log(LOG_CRIT, "%s: NULL parameter provided for MA componetns", __func__);
+        oscms_log(LOG_CRIT, "%s: NULL parameter provided for MA components", __func__);
         return -1;
     }
     return 0;
