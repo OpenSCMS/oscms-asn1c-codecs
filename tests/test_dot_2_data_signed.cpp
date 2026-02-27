@@ -43,7 +43,7 @@ TEST(Dot2DataSigned, BadArgs)
             NULL, OSCMS_DOT2_DATA_SIGNED_TYPE_CERTIFICATE_MANAGEMENT_INFO_STATUS_SPDU, &dot2_data_signed),
         -1);
 
-    // check invalid enclsing type
+    // check invalid enclosing type
     payload.data   = (OscmsOctet *)"test data";
     payload.length = 10;
     EXPECT_EQ(oscms_decode_dot2_data_signed(&payload, (OscmsDot2DataSignedType)1234, &dot2_data_signed), -1);

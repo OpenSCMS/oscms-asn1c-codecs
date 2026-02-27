@@ -139,7 +139,7 @@ static int pack_identified_region(const OscmsIdentifiedRegion *region, Identifie
 
             for (size_t i = 0; i < region->value.country_and_region.region.length; i++)
             {
-                // Unintuitively, ASN1C uses a long for a Uint8_t type, which  means we need to do this by hand
+                // Counter-intuitively, ASN1C uses a long for a Uint8_t type, which  means we need to do this by hand
                 Uint8_t *tmp = malloc(sizeof(Uint8_t));
                 if (!tmp)
                 {
@@ -854,7 +854,7 @@ int oscms_internal_from_tbs_certificate(const OscmsTbsCertificate *tbs_certifica
 }
 
 /**
- * Initialize an internal reposentation of the TBS certificate structure.
+ * Initialize an internal representation of the TBS certificate structure.
  *
  * All fields are set to their default values (if applicable), all pointers (I.e. OPTIONAL fields) are set to NULL.
  *

@@ -30,7 +30,7 @@
 #include "oscms_asn1c_generated/Certificate.h"
 #include "oscms_asn1c_generated/ExplicitCertificate.h"
 
-TEST(CertificatetDecode, NullArgs)
+TEST(CertificateDecode, NullArgs)
 {
     OscmsCertificate cert          = {};
     OscmsOctetBuffer internal_cert = {};
@@ -90,7 +90,7 @@ TEST(Certificate, Roundtrip)
     EXPECT_EQ(buffer.size(), cert_buffer.length);
     EXPECT_EQ(memcmp(buffer.data(), cert_buffer.data, buffer.size()), 0);
 
-    // As a final santiry check, make sure the raw codecs can decode our encoded version
+    // As a final sanity check, make sure the raw codecs can decode our encoded version
     Certificate_t *our_decoded_cert = 0;
     ASSERT_EQ(0, decode_binary_certificate(cert_buffer.data, cert_buffer.length, &our_decoded_cert));
 

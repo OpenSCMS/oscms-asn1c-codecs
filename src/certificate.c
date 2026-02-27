@@ -138,7 +138,7 @@ int oscms_internal_from_certificate(const OscmsCertificate *certificate, void *i
     {
         // See Ieee 1609.2-2022 specification 6.4.6
         //
-        // An expliciit certificate must have a signature, and the VKI must contain a verification key.
+        // An explicit certificate must have a signature, and the VKI must contain a verification key.
         //
         if (!certificate->signature)
         {

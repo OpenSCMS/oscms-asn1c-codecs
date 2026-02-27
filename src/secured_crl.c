@@ -24,7 +24,7 @@
 
 #include "asn1c_utilities.h"
 
-static int sequence_of_inidivual_revocations_to_internal(
+static int sequence_of_individual_revocations_to_internal(
     const OscmsIndividualRevocation *revocations, size_t count, SequenceOfIndividualRevocation_t *internal)
 {
     memset(internal, 0, sizeof(SequenceOfIndividualRevocation_t));
@@ -130,7 +130,7 @@ static int sequence_of_imax_groups_to_internal(
         const OscmsIMaxGroup *entry = &imax_groups[i];
         internal_entry->iMax        = entry->i_max;
 
-        if (sequence_of_inidivual_revocations_to_internal(
+        if (sequence_of_individual_revocations_to_internal(
                 entry->revocations, entry->revocations_count, &internal_entry->contents) != 0)
         {
             return -1;

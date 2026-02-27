@@ -28,7 +28,7 @@
 #include "asn1c_utilities.h"
 #include "dot2_data_encrypted_utils.h"
 
-// Maps the enclosing type to the corresponding ASN1C type defintion for encoding and decoding
+// Maps the enclosing type to the corresponding ASN1C type definition for encoding and decoding
 static asn_TYPE_descriptor_t *enclosing_type_to_descriptor[] = {
     &asn_DEF_Ieee1609Dot2Data_Encrypted_276P0,
     &asn_DEF_EeRaCertRequestSpdu,
@@ -164,7 +164,7 @@ static int decode_recipients(const SequenceOfRecipientInfo_t *recipients_interna
                     return -1;
                 }
                 break;
-            default: // Others (constraint chck guarantees the type is valid)
+            default: // Others (constraint check guarantees the type is valid)
                 if (decode_public_recipient(
                         &recipient_internal->choice.certRecipInfo, recipient, &decoded->allocations) != 0)
                 {
