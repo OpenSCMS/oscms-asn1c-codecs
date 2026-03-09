@@ -102,6 +102,8 @@ The list of repositories, and their relative submodule dependencies is as follow
         - [etsi_ts103097-asn](<https://github.com/OpenSCMS/etsi_ts103097-asn>)
         - [ieee1609dot2dot1-asn](<https://github.com/OpenSCMS/ieee1609dot2dot1-asn>)
 
+The project also makes use of the [Cmake Helpers project](https://github.com/OpenSCMS/oscms-cmake-helpers.git)
+
 ### Building the code
 
 All C code is built using `CMake` and the `CMake` scripts will enforce out-of-source builds.
@@ -125,6 +127,7 @@ All CMake scripts support a common set of options and command line definitions.
 | CMAKE_BUILD_TYPE | Debug | Defines the build type. Acceptable values are Debug or Release. This primarily affects debug symbols and optimization levels. |
 | EXTRA_MEMCHECK_OPTIONS | empty | Allows the specification of additional arguments to `valgrind`|
 | RUN_CPPCHECK | On | Enables or disables running `cppcheck` on all code during the build. |
+| SKIP_INSTALL | Off | If set to On, suppresses generation of any `install` targets |
 
 This repository supports an additional option, `ENABLE_ASN1C_DEBUG`, which defaults to `Off'. If defined as 'On', it enables extensive debugging logs from the generated CODECs. This is only really useful as a last resort, when you suspect a fault in the generated code, as it will literally swamp you in logs.
 
